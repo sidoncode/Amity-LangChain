@@ -260,6 +260,10 @@ def make_history():
 
 ---
 
+<img width="739" height="226" alt="image" src="https://github.com/user-attachments/assets/6d30063a-3046-4c22-abb2-5ed979e9fd27" />
+
+---
+
 ## Decision guide
 
 ```
