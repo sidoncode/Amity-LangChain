@@ -298,6 +298,7 @@ LangSmith gives you a visual trace of every prompt, response, and chain step —
 LANGCHAIN_TRACING_V2=true
 LANGCHAIN_API_KEY=ls__...
 LANGCHAIN_PROJECT=langchain-memory-demo
+OPENAI_API_KEY = "sk - .... "
 ```
 
 Sign up free at [smith.langchain.com](https://smith.langchain.com).
