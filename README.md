@@ -14,6 +14,26 @@ LangChain is an open-source framework for building applications powered by **lar
 Your Question → Prompt Template → LLM → Output Parser → Answer
 ```
 
+---
+
+
+## Memory types — use-case table
+
+| Memory type | Session length | Token cost | Best use case | Avoid when |
+|---|---|---|---|---|
+| `ChatMessageHistory` | < 20 turns | Unbounded | Demos, prototypes, short Q&A | Production bots with long conversations |
+| Buffer Window `k=10` | 20 – 200 turns | Fixed (by k) | Production chatbots, support bots, tutors | Early context is critical to recall later |
+| `SummaryBufferMemory` | 200 – 1 000 turns | Medium + 1 extra LLM call | Long support chats, coaching, interview assistants | Latency or cost is tightly constrained |
+| `VectorStoreRetrieverMemory` | 1 000+ turns | Low per query | Personal AI, research copilots, long-lived assistants | Simple apps where setup complexity is not justified |
+
+---
+
+<img width="739" height="226" alt="image" src="https://github.com/user-attachments/assets/6d30063a-3046-4c22-abb2-5ed979e9fd27" />
+
+---
+
+
+
 ### Core concepts
 
 | Concept | What it does |
@@ -246,21 +266,6 @@ def make_history():
 ```
 
 **Lines removed vs Type 1:** same as Type 3.
-
----
-
-## Memory types — use-case table
-
-| Memory type | Session length | Token cost | Best use case | Avoid when |
-|---|---|---|---|---|
-| `ChatMessageHistory` | < 20 turns | Unbounded | Demos, prototypes, short Q&A | Production bots with long conversations |
-| Buffer Window `k=10` | 20 – 200 turns | Fixed (by k) | Production chatbots, support bots, tutors | Early context is critical to recall later |
-| `SummaryBufferMemory` | 200 – 1 000 turns | Medium + 1 extra LLM call | Long support chats, coaching, interview assistants | Latency or cost is tightly constrained |
-| `VectorStoreRetrieverMemory` | 1 000+ turns | Low per query | Personal AI, research copilots, long-lived assistants | Simple apps where setup complexity is not justified |
-
----
-
-<img width="739" height="226" alt="image" src="https://github.com/user-attachments/assets/6d30063a-3046-4c22-abb2-5ed979e9fd27" />
 
 ---
 
